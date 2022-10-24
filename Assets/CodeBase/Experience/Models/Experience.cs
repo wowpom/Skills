@@ -5,8 +5,8 @@ namespace CodeBase.Experience.Models
     public class Experience : IExperience
     {
         public event Action<int> OnExperienceCountChanged = delegate {  };
+        
         public int ExperienceCount => _experienceCount;
-
         private int _experienceCount = 0;
 
         public bool TryTake(int value)
