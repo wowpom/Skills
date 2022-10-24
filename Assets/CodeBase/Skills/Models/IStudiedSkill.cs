@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodeBase.Skills
+namespace CodeBase.Skills.Models
 {
     public interface IStudiedSkill : ISkill
     {
@@ -8,9 +8,7 @@ namespace CodeBase.Skills
         
         bool IsStudy { get; }
 
-        int GetCost();
-
-        bool GetIsPossibleStudy();
+        int Cost { get; set; }
 
         void Study();
     }

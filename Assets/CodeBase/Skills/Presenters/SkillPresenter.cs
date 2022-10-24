@@ -1,7 +1,13 @@
-﻿namespace CodeBase.Skills
+﻿using CodeBase.Skills.Models;
+using CodeBase.Skills.Views;
+
+namespace CodeBase.Skills.Presenters
 {
     public class SkillPresenter : ISkillPresenter
     {
+        public string Id => _skill.Id;
+
+        
         private readonly ISkill _skill;
         private readonly ISkillView _skillView;
 
@@ -15,5 +21,6 @@
         {
             
         }
+
     }
 }

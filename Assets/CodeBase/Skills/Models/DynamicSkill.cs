@@ -1,25 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CodeBase.Skills
+namespace CodeBase.Skills.Models
 {
     public class DynamicSkill : Skill, IForgettableSkill
     {
         public event Action OnStudy;
         public event Action OnForget;
 
+        public int Cost { get; set; }
         public bool IsStudy => _isStudy;
         private bool _isStudy = false;
         
-        private readonly int _cost;
         private readonly List<ISkill> _dependentSkills;
 
 
-        public DynamicSkill(string id, int cost, List<ISkill> dependentSkills) : base(id)
-        {
-            _cost = cost;
-            _dependentSkills = dependentSkills;
-        }
+        public DynamicSkill(string id, int cost) : base(id) => 
+            Cost = cost;
 
         public void Forget()
         {
@@ -32,9 +29,6 @@ namespace CodeBase.Skills
             _isStudy = true;
             OnStudy();
         }
-
-        public int GetCost() =>
-            _cost;
 
         public bool GetIsPossibleStudy()
         {

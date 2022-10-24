@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodeBase.Skills
+namespace CodeBase.Skills.Models
 {
     public interface IForgettableSkill : IStudiedSkill
     {

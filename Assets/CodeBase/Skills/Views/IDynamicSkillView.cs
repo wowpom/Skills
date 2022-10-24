@@ -1,4 +1,4 @@
-﻿namespace CodeBase.Skills
+﻿namespace CodeBase.Skills.Views
 {
     public interface IDynamicSkillView : ISkillView
     {
