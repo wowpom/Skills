@@ -1,0 +1,100 @@
+﻿{
+  "skills": [
+    {
+      "typeof" : "base",
+      "id" : "0"
+    },
+    {
+      "typeof" : "dynamic",
+      "id" : "1",
+      "cost" : 1,
+      "idDependecy" :
+      [
+        "0"
+      ]
+    },
+    {
+      "typeof" : "dynamic",
+      "id" : "2",
+      "cost" : 1,
+      "idDependecy" :
+      [
+        "0"
+      ]
+    },
+    {
+      "typeof" : "dynamic",
+      "id" : "3",
+      "cost" : 1,
+      "idDependecy" :
+      [
+        "2"
+      ]
+    },
+    {
+      "typeof" : "dynamic",
+      "id" : "4",
+      "cost" : 1,
+      "idDependecy" :
+      [
+        "0"
+      ]
+    },
+    {
+      "typeof" : "dynamic",
+      "id" : "5",
+      "cost" : 1,
+      "idDependecy" :
+      [
+        "4"
+      ]
+    },
+    {
+      "typeof" : "dynamic",
+      "id" : "6",
+      "cost" : 1,
+      "idDependecy" :
+      [
+        "4"
+      ]
+    },
+    {
+      "typeof" : "dynamic",
+      "id" : "7",
+      "cost" : 1,
+      "idDependecy" :
+      [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "typeof" : "dynamic",
+      "id" : "8",
+      "cost" : 1,
+      "idDependecy" :
+      [
+        "0"
+      ]
+    },
+    {
+      "typeof" : "dynamic",
+      "id" : "9",
+      "cost" : 1,
+      "idDependecy" :
+      [
+        "0"
+      ]
+    },
+    {
+      "typeof" : "dynamic",
+      "id" : "10",
+      "cost" : 1,
+      "idDependecy" :
+      [
+        "8",
+        "9"
+      ]
+    }
+  ]
+}
