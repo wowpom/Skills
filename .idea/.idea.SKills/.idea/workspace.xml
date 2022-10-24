@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f70b9ae-6061-4143-9e6b-6bd0da55f737" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SKills/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SKills/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameResources/Prefabs/Skill.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameResources/Prefabs/Skill.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Experience/Models/Experience.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Experience/Models/Experience.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Experience/Models/IExperience.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Experience/Models/IExperience.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Experience/Presenters/ExperiencePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Experience/Presenters/ExperiencePresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Skills/ISkillsDependenciesContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Skills/ISkillsDependenciesContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Skills/Models/DynamicSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Skills/Models/DynamicSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Skills/Models/IStudiedSkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Skills/Models/IStudiedSkill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Skills/Presenters/DynamicSkillPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Skills/Presenters/DynamicSkillPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Skills/Presenters/IStudiedSkillPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Skills/Presenters/IStudiedSkillPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Skills/Presenters/SkillPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Skills/Presenters/SkillPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Skills/SkillInfoParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Skills/SkillInfoParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Skills/Views/DynamicSkillView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Skills/Views/DynamicSkillView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Skills/Views/IDynamicSkillView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Skills/Views/IDynamicSkillView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UserInterface/AddingExperienceButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UserInterface/AddingExperienceButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UserInterface/ButtonsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UserInterface/ButtonsHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +98,7 @@
       <workItem from="1666522418878" duration="830000" />
       <workItem from="1666523268961" duration="3812000" />
       <workItem from="1666527113952" duration="16837000" />
-      <workItem from="1666618313413" duration="7347000" />
+      <workItem from="1666618313413" duration="8171000" />
     </task>
     <servers />
   </component>

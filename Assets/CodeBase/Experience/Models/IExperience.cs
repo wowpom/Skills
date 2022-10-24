@@ -7,9 +7,8 @@ namespace CodeBase.Experience.Models
         event Action<int> OnExperienceCountChanged; 
 
         int ExperienceCount { get; }
-
+        
         bool TryTake(int value);
-
         void Add(int value);
     }
 }

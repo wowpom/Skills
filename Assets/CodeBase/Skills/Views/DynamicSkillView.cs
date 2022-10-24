@@ -31,9 +31,6 @@ namespace CodeBase.Skills.Views
         public void SetAvailableView() =>
             _image.sprite = _availableSprite;
 
-        public void SetUnavailableView() =>
-            _image.sprite = _unavailableSprite;
-
         public void SetStudiedView() =>
             _image.sprite = _studiedSprite;
 

@@ -11,9 +11,6 @@ namespace CodeBase.Skills.Models
         public int Cost { get; set; }
         public bool IsStudy => _isStudy;
         private bool _isStudy = false;
-        
-        private readonly List<ISkill> _dependentSkills;
-
 
         public DynamicSkill(string id, int cost) : base(id) => 
             Cost = cost;
@@ -28,24 +25,6 @@ namespace CodeBase.Skills.Models
         {
             _isStudy = true;
             OnStudy();
-        }
-
-        public bool GetIsPossibleStudy()
-        {
-            for (int i = 0; i < _dependentSkills.Count; i++)
-            {
-                if (_dependentSkills[i] is IStudiedSkill skill)
-                {
-                    if (skill.IsStudy)
-                        return true;
-                }
-                else
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
     }
 }
