@@ -15,6 +15,7 @@ namespace CodeBase.UserInterface
         [SerializeField] private Button studyButton;
         [SerializeField] private Button forgetButton;
         [SerializeField] private Button forgetAllButton;
+        
         private ISkillPresenter _selectedSkillPresenter;
     
         public void SetSkillPresenter(ISkillPresenter skillPresenter)

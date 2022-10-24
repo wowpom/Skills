@@ -49,8 +49,5 @@ namespace CodeBase.Skills.Presenters
             _skillView.SetAvailableView();
             OnForget();
         }
-
-       
-
     }
 }

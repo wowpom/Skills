@@ -7,8 +7,8 @@ namespace CodeBase.Skills.Presenters
         event Action OnStudy;
         
         bool IsStudy { get; }
-
         int Cost { get; }
+        
         void Study();
     }
 }

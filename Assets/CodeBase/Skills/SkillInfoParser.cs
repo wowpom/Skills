@@ -16,6 +16,7 @@ namespace CodeBase.Skills
         private const string IdDependecy = "idDependecy";
         
         private Dictionary<string, string[]> _dependencies;
+        
         public List<ISkill> ParseData()
         {
             List<ISkill> skills = new List<ISkill>();

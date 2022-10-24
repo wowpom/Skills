@@ -24,9 +24,7 @@ namespace CodeBase.UserInterface
                 _button.onClick.RemoveListener(OnButtonClickHandle);
         }
 
-        private void OnButtonClickHandle()
-        {
+        private void OnButtonClickHandle() => 
             _experiencePresenter.Add(1);
-        }
     }
 }

@@ -7,7 +7,6 @@ namespace CodeBase.Skills.Models
         event Action OnStudy;
         
         bool IsStudy { get; }
-
         int Cost { get; set; }
 
         void Study();
