@@ -8,5 +8,8 @@ namespace CodeBase.Skills.Views
         event Action<string> OnSelect;
 
         string Id { get; }
+        
+        void Select(bool isSelect);
+
     }
 }

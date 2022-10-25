@@ -1,5 +1,4 @@
 using System;
-using CodeBase.Skills;
 using CodeBase.Skills.Presenters;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +20,8 @@ namespace CodeBase.UserInterface
         public void SetSkillPresenter(ISkillPresenter skillPresenter)
         {
             Unsubscribe();
-        
+            _selectedSkillPresenter?.Select(false);
+
             _selectedSkillPresenter = skillPresenter;
             if (skillPresenter is IForgettableSkillPresenter forgettableSkillPresenter)
             {
@@ -34,6 +34,9 @@ namespace CodeBase.UserInterface
                 studyButton.interactable = false;
                 forgetButton.interactable = false;
             }
+
+            _selectedSkillPresenter?.Select(true);
+
         }
 
         private void UpdateSkillDataHandle()

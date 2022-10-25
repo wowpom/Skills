@@ -12,15 +12,15 @@ namespace CodeBase.UserInterface
         private List<ISkillView> _skillViews;
 
         private string _skillID;
-        private SkillsInitializator _presenterContainer;
+        private IPresenterContainer _presenterContainer;
 
-        public void Init(List<ISkillView> skillViews, SkillsInitializator presenterContainer)
+        public void Init(List<ISkillView> skillViews, IPresenterContainer presenterContainer)
         {
             _presenterContainer = presenterContainer;
             _skillViews = skillViews;
+
             for (int i = 0; i < skillViews.Count; i++)
-                if (skillViews[i] is IDynamicSkillView)
-                    skillViews[i].OnSelect += OnSelectHandle;
+                skillViews[i].OnSelect += OnSelectHandle;
         }
 
         private void OnDestroy()

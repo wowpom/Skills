@@ -403,6 +403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138686829}
   - component: {fileID: 138686828}
+  - component: {fileID: 138686830}
   m_Layer: 0
   m_Name: Experience
   m_TagString: Untagged
@@ -424,6 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   experienceView: {fileID: 2013360294}
   addingExperienceButton: {fileID: 1105345746}
+  experiencePresenterContainer: {fileID: 138686830}
 --- !u!4 &138686829
 Transform:
   m_ObjectHideFlags: 0
@@ -438,6 +440,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &138686830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138686827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd393ab465710164e84a7ddd0d55a291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &251596169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1149,8 +1163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonsHandler: {fileID: 87559922}
-  experienceInitializator: {fileID: 138686828}
-  skillsInitializator: {fileID: 1841230624}
+  experiencePresenterContainer: {fileID: 138686830}
+  skillPresenterContainer: {fileID: 1841230626}
   skillsDependenciesContainer: {fileID: 1841230625}
 --- !u!4 &779746924
 Transform:
@@ -1849,6 +1863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  selectObject: {fileID: 0}
 --- !u!1001 &1200700816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2180,7 +2195,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1317996764}
   m_OnClick:
     m_PersistentCalls:
@@ -2428,6 +2443,7 @@ GameObject:
   - component: {fileID: 1841230623}
   - component: {fileID: 1841230624}
   - component: {fileID: 1841230625}
+  - component: {fileID: 1841230626}
   m_Layer: 0
   m_Name: SkillInitializator
   m_TagString: Untagged
@@ -2464,6 +2480,7 @@ MonoBehaviour:
   uiObserver: {fileID: 827701381}
   parentViews: {fileID: 1259896835}
   skillsDependenciesContainer: {fileID: 1841230625}
+  presenterContainer: {fileID: 1841230626}
 --- !u!114 &1841230625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,6 +2491,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 095a8eb656854c88b630fe0c2d04d2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1841230626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841230622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8296907b6a70547a78428839503948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1851488593
@@ -2620,7 +2649,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1867942359}
   m_OnClick:
     m_PersistentCalls:
