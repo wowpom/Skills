@@ -10,6 +10,8 @@ namespace CodeBase.Skills.Presenters
         public event Action OnForget = delegate { };
 
         public string Id => _forgettableSkill.Id;
+        
+
         public bool IsStudy => _forgettableSkill.IsStudy;
         public int Cost => _forgettableSkill.Cost;
         
@@ -38,6 +40,9 @@ namespace CodeBase.Skills.Presenters
         public void Forget() => 
             _forgettableSkill.Forget();
         
+        public void Select(bool isSelect) => 
+            _skillView.Select(isSelect);
+
         private void OnStudyHandle()
         {
             _skillView.SetStudiedView();

@@ -1,4 +1,3 @@
-using CodeBase.Experience;
 using CodeBase.Experience.Presenters;
 using UnityEngine;
 using UnityEngine.UI;

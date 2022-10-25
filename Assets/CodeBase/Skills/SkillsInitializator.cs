@@ -7,55 +7,50 @@ using UnityEngine;
 
 namespace CodeBase.Skills
 {
-    public class SkillsInitializator : MonoBehaviour, IPresenterContainer
+    public class SkillsInitializator : MonoBehaviour
     {
-        public List<ISkillPresenter> SkillPresenters => _skillPresenters;
-        private readonly List<ISkillPresenter> _skillPresenters = new List<ISkillPresenter>();
-        
         [SerializeField] private UIObserver uiObserver;
         [SerializeField] private Transform parentViews;
         [SerializeField] private SkillsDependenciesContainer skillsDependenciesContainer;
+        [SerializeField] private PresenterContainer presenterContainer;
         
         private readonly List<ISkillView> _skillViews = new List<ISkillView>();
         private readonly SkillInfoParser _skillsInfoParser = new SkillInfoParser();
         
         private List<ISkill> _skills = new List<ISkill>();
 
-        public ISkill GetSkillById(string id) =>
-            _skills.Find(x => x.Id == id);
-
-        public ISkillPresenter GetPresenterBySkillId(string skillID) => 
-            _skillPresenters.Find(x => x.Id == skillID);
-
         private void Awake()
         {
             _skills = _skillsInfoParser.ParseData();
             _skillViews.AddRange( parentViews.GetComponentsInChildren<ISkillView>());
-            uiObserver.Init(_skillViews, this);
+            uiObserver.Init(_skillViews, presenterContainer);
 
-            CreatePresenters();
-            skillsDependenciesContainer.Init(this, _skillsInfoParser.GetDependencies());
+            presenterContainer.SetSkillPresenters(CreatePresenters());
+            skillsDependenciesContainer.Init(presenterContainer, _skillsInfoParser.GetDependencies());
         }
 
-        private void CreatePresenters()
+        private List<ISkillPresenter> CreatePresenters()
         {
+            List<ISkillPresenter> skillPresenters = new List<ISkillPresenter>();
             if (_skills.Count != _skillViews.Count)
             {
                 Debug.LogError("Количество навыков и вью отличается");
-                return;
+                return null;
             }
 
             for (int i = 0; i < _skills.Count; i++)
             {
                 if (_skills[i] is IForgettableSkill forgettableSkill)
                 {
-                    _skillPresenters.Add(new DynamicSkillPresenter(forgettableSkill, (IDynamicSkillView)GetViewByID(forgettableSkill.Id)));
+                    skillPresenters.Add(new DynamicSkillPresenter(forgettableSkill, (IDynamicSkillView)GetViewByID(forgettableSkill.Id)));
                 }
                 else
                 {
-                    _skillPresenters.Add(new SkillPresenter(_skills[i], GetViewByID(_skills[i].Id)));
+                    skillPresenters.Add(new SkillPresenter(_skills[i], GetViewByID(_skills[i].Id)));
                 }
             }
+
+            return skillPresenters;
         }
 
         private ISkillView GetViewByID(string id) => 

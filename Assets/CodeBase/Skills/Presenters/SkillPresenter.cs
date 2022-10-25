@@ -6,7 +6,7 @@ namespace CodeBase.Skills.Presenters
     public class SkillPresenter : ISkillPresenter
     {
         public string Id => _skill.Id;
-        
+
         private readonly ISkill _skill;
         private readonly ISkillView _skillView;
 
@@ -15,5 +15,8 @@ namespace CodeBase.Skills.Presenters
             _skill = skill;
             _skillView = skillView;
         }
+        
+        public void Select(bool isSelect) => 
+            _skillView.Select(isSelect);
     }
 }

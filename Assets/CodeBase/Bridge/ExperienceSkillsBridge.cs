@@ -1,5 +1,4 @@
-﻿using System;
-using CodeBase.Experience;
+﻿using CodeBase.Experience;
 using CodeBase.Skills;
 using CodeBase.Skills.Presenters;
 using CodeBase.UserInterface;
@@ -10,8 +9,8 @@ namespace CodeBase.Bridge
     public class ExperienceSkillsBridge: MonoBehaviour
     {
         [SerializeField] private ButtonsHandler buttonsHandler;
-        [SerializeField] private ExperienceInitializator experienceInitializator;
-        [SerializeField] private SkillsInitializator skillsInitializator;
+        [SerializeField] private ExperiencePresenterContainer experiencePresenterContainer;
+        [SerializeField] private PresenterContainer skillPresenterContainer;
         [SerializeField] private SkillsDependenciesContainer skillsDependenciesContainer;
 
         private void Start()
@@ -21,14 +20,21 @@ namespace CodeBase.Bridge
             buttonsHandler.OnForgetAllRequest += OnForgetAllRequest;
         }
 
+        private void OnDestroy()
+        {
+            buttonsHandler.OnForgetRequest -= OnForgetRequestHandle;
+            buttonsHandler.OnStudyRequest -= OnStudyRequestHandle;
+            buttonsHandler.OnForgetAllRequest -= OnForgetAllRequest;
+        }
+
         private void OnForgetAllRequest()
         {
-            foreach (var skillPresenter in skillsInitializator.SkillPresenters)
+            foreach (var skillPresenter in skillPresenterContainer.SkillPresenters)
             {
-                if (skillPresenter is IForgettableSkillPresenter forgettableSkillPresenter)
+                if (skillPresenter is IForgettableSkillPresenter { IsStudy: true } forgettableSkillPresenter)
                 {
                     forgettableSkillPresenter.Forget();
-                    experienceInitializator.ExperiencePresenter.Add(forgettableSkillPresenter.Cost);
+                    experiencePresenterContainer.ExperiencePresenter.Add(forgettableSkillPresenter.Cost);
                 }
             }
         }
@@ -41,10 +47,10 @@ namespace CodeBase.Bridge
             if (!skillsDependenciesContainer.GetPossibleStudySkill(studiedSkillPresenter.Id))
                 return;
             
-            if(!experienceInitializator.ExperiencePresenter.TryTake(studiedSkillPresenter.Cost))
+            if(!experiencePresenterContainer.ExperiencePresenter.TryTake(studiedSkillPresenter.Cost))
                 return;
             
-            ((IStudiedSkillPresenter)skillsInitializator.GetPresenterBySkillId(studiedSkillPresenter.Id)).Study();
+            ((IStudiedSkillPresenter)skillPresenterContainer.GetPresenterBySkillId(studiedSkillPresenter.Id)).Study();
         }
 
         private void OnForgetRequestHandle(ISkillPresenter skillPresenter)
@@ -54,7 +60,7 @@ namespace CodeBase.Bridge
             if (!skillsDependenciesContainer.GetPossibleForgetSkill(forgettableSkillPresenter.Id))
                 return;
 
-            experienceInitializator.ExperiencePresenter.Add(forgettableSkillPresenter.Cost);
+            experiencePresenterContainer.ExperiencePresenter.Add(forgettableSkillPresenter.Cost);
             forgettableSkillPresenter.Forget();
         }
     }

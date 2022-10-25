@@ -9,7 +9,11 @@ namespace CodeBase.Skills.Views
         public event Action<string> OnSelect = delegate {  };
 
         [SerializeField] private string id;
+        [SerializeField] private GameObject selectObject;
         public string Id => id;
+
+        public void Select(bool isSelect) =>
+            selectObject.SetActive(isSelect);
 
         public void OnPointerDown(PointerEventData eventData) =>
             OnSelect(id);

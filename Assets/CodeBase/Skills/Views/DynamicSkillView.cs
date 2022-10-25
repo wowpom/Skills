@@ -12,13 +12,12 @@ namespace CodeBase.Skills.Views
 
         [SerializeField]
         private string id;
-
-        [SerializeField] private Text textSkillId;
         public string Id => id;
 
         [SerializeField] private Sprite _availableSprite;
-        [SerializeField] private Sprite _unavailableSprite;
         [SerializeField] private Sprite _studiedSprite;
+        [SerializeField] private Text textSkillId;
+        [SerializeField] private GameObject selectObject;
 
         private Image _image;
 
@@ -36,5 +35,8 @@ namespace CodeBase.Skills.Views
 
         public void OnPointerDown(PointerEventData eventData) => 
             OnSelect(id);
+        
+        public void Select(bool isSelect) =>
+            selectObject.SetActive(isSelect);
     }
 }
